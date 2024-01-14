@@ -1,0 +1,43 @@
+name: decalcomania_aet
+description: A new Flutter project.
+version: 1.0.0+1
+environment: 
+  sdk: '>=2.12.0 <3.0.0'
+dependencies: 
+  flutter: 
+    sdk: flutter
+  get: ^4.6.6
+  connectivity_plus: ^5.0.2
+  shared_preferences: ^2.2.2
+  cached_network_image: ^3.3.0
+  flutter_svg: ^2.0.9
+  intl: ^0.19.0
+dev_dependencies: 
+  flutter_test: 
+    sdk: flutter
+flutter: 
+  uses-material-design: true
+  assets: 
+    - assets/
+    - assets/images/
+  fonts: 
+    - family: Baloo 2
+      fonts: 
+        - asset: assets/fonts/Baloo2Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Baloo2Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Baloo2Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Baloo2SemiBold.ttf
+          weight: 600
+    - family: Inter
+      fonts: 
+        - asset: assets/fonts/InterBold.ttf
+          weight: 700
+        - asset: assets/fonts/InterRegular.ttf
+          weight: 400
+        - asset: assets/fonts/InterSemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/InterMedium.ttf
+          weight: 500
