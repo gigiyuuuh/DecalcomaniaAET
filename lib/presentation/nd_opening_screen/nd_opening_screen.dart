@@ -69,7 +69,7 @@ class NdOpeningScreen extends GetWidget<NdOpeningController> {
     );
   }
 
-  onTapTxtTapTheSkinTest() {
+  onTapTxtTakeTheSkinTestAnalysisnow() {
     Get.toNamed(
       AppRoutes.profileScreenPage,
     );

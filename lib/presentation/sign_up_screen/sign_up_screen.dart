@@ -109,7 +109,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                               children: [
                                                                 SizedBox(
                                                                     height:
-                                                                        35.v,
+                                                                        40.v,
                                                                     width:
                                                                         128.h,
                                                                     child: Stack(
@@ -123,7 +123,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                                         ])),
                                                                 SizedBox(
                                                                     height:
-                                                                        8.v),
+                                                                        6.v),
                                                                 Padding(
                                                                     padding: EdgeInsets.only(
                                                                         left: 3
@@ -140,7 +140,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                               padding: EdgeInsets
                                                                   .only(
                                                                       bottom:
-                                                                          18.v),
+                                                                          4.v),
                                                               child: Column(
                                                                   crossAxisAlignment:
                                                                       CrossAxisAlignment
@@ -153,9 +153,6 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                                         style: theme
                                                                             .textTheme
                                                                             .labelMedium),
-                                                                    SizedBox(
-                                                                        height:
-                                                                            1.v),
                                                                     _buildGenderValue()
                                                                   ]))
                                                         ])))
@@ -168,59 +165,26 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
+                                            _buildZipCode(),
                                             Container(
-                                                width: 61.h,
-                                                padding: EdgeInsets.symmetric(
-                                                    horizontal: 6.h,
-                                                    vertical: 2.v),
-                                                decoration: AppDecoration
-                                                    .outlineGray
-                                                    .copyWith(
-                                                        borderRadius:
-                                                            BorderRadiusStyle
-                                                                .roundedBorder5),
-                                                child: Text(
-                                                    "lbl_zip_code"
-                                                        .tr
-                                                        .toUpperCase(),
-                                                    style: theme
-                                                        .textTheme.bodySmall)),
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 1.h,
+                                                  vertical: 2.v),
+                                            ),
+                                            _buildCity(),
                                             Container(
-                                                width: 91.h,
-                                                margin:
-                                                    EdgeInsets.only(top: 1.v),
-                                                padding: EdgeInsets.symmetric(
-                                                    horizontal: 8.h,
-                                                    vertical: 2.v),
-                                                decoration: AppDecoration
-                                                    .outlineGray
-                                                    .copyWith(
-                                                        borderRadius:
-                                                            BorderRadiusStyle
-                                                                .roundedBorder5),
-                                                child: Text(
-                                                    "lbl_city".tr.toUpperCase(),
-                                                    style: theme
-                                                        .textTheme.bodySmall)),
+                                              margin: EdgeInsets.only(top: 1.v),
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 3.h,
+                                                  vertical: 2.v),
+                                            ),
+                                            _buildProvince(),
                                             Container(
-                                                width: 91.h,
-                                                margin:
-                                                    EdgeInsets.only(top: 1.v),
-                                                padding: EdgeInsets.symmetric(
-                                                    horizontal: 7.h,
-                                                    vertical: 2.v),
-                                                decoration: AppDecoration
-                                                    .outlineGray
-                                                    .copyWith(
-                                                        borderRadius:
-                                                            BorderRadiusStyle
-                                                                .roundedBorder5),
-                                                child: Text(
-                                                    "lbl_province"
-                                                        .tr
-                                                        .toUpperCase(),
-                                                    style: theme
-                                                        .textTheme.bodySmall))
+                                              margin: EdgeInsets.only(top: 1.v),
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 2.h,
+                                                  vertical: 2.v),
+                                            )
                                           ])),
                                   SizedBox(height: 11.v),
                                   Container(
@@ -230,7 +194,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                       child: Stack(
                                           alignment: Alignment.topLeft,
                                           children: [
-                                            _buildZipcode(),
+                                            _buildPhone(),
                                             Align(
                                                 alignment: Alignment.topLeft,
                                                 child: Padding(
@@ -310,7 +274,6 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                         style: theme.textTheme
                                                             .labelMedium)))
                                           ])),
-                                  SizedBox(height: 5.v),
                                   Padding(
                                       padding: EdgeInsets.only(
                                           left: 3.h, right: 14.h),
@@ -322,38 +285,30 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                 alignment: Alignment.topLeft,
                                                 children: [
                                                   Align(
-                                                      alignment: Alignment
-                                                          .bottomCenter,
-                                                      child: Container(
-                                                          height: 19.v,
-                                                          width: 128.h,
-                                                          decoration: BoxDecoration(
-                                                              color: appTheme
-                                                                  .gray300,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          7.h),
-                                                              border: Border.all(
-                                                                  color: appTheme
-                                                                      .gray900,
-                                                                  width: 1.h,
-                                                                  strokeAlign:
-                                                                      strokeAlignOutside)))),
-                                                  Align(
-                                                      alignment:
-                                                          Alignment.topLeft,
-                                                      child: Padding(
-                                                          padding:
-                                                              EdgeInsets.only(
-                                                                  left: 4.h),
-                                                          child: Text(
-                                                              "lbl_password2"
-                                                                  .tr
-                                                                  .toUpperCase(),
-                                                              style: theme
-                                                                  .textTheme
-                                                                  .labelMedium)))
+                                                    alignment:
+                                                        Alignment.bottomCenter,
+                                                  ),
+                                                  Container(
+                                                      margin: EdgeInsets.only(
+                                                          left: 9.h),
+                                                      child: Stack(children: [
+                                                        _buildPassword(),
+                                                        Align(
+                                                            alignment: Alignment
+                                                                .topLeft,
+                                                            child: Padding(
+                                                                padding: EdgeInsets
+                                                                    .only(
+                                                                        left: 4
+                                                                            .h),
+                                                                child: Text(
+                                                                    "password"
+                                                                        .tr
+                                                                        .toUpperCase(),
+                                                                    style: theme
+                                                                        .textTheme
+                                                                        .labelMedium)))
+                                                      ]))
                                                 ])),
                                         Container(
                                             height: 34.v,
@@ -481,15 +436,16 @@ class SignUpScreen extends GetWidget<SignUpController> {
     return CustomTextFormField(
         hintText: "MM/DD/YYYY",
         width: 128.h,
-        alignment: Alignment.bottomCenter);
+        contentPadding: EdgeInsets.only(top: 1.v, bottom: 3.v),
+        alignment: Alignment.topCenter);
   }
 
   /// Section Widget
   Widget _buildGenderValue() {
     return Align(
-        alignment: Alignment.centerRight,
+        alignment: Alignment.center,
         child: Padding(
-            padding: EdgeInsets.only(left: 7.h),
+            padding: EdgeInsets.only(right: 20.h),
             child: Obx(() => Row(children: [
                   CustomRadioButton(
                       text: "lbl_male".tr.toUpperCase(),
@@ -512,11 +468,38 @@ class SignUpScreen extends GetWidget<SignUpController> {
   }
 
   /// Section Widget
-  Widget _buildZipcode() {
+  Widget _buildPhone() {
     return CustomTextFormField(
         width: 128.h,
-        controller: controller.zipcodeController,
+        controller: controller.PhoneController,
         hintText: "lbl_ph".tr.toUpperCase(),
+        alignment: Alignment.bottomCenter);
+  }
+
+  /// Section Widget
+  Widget _buildZipCode() {
+    return CustomTextFormField(
+        width: 50.h,
+        controller: controller.zipcodeController,
+        hintText: "ZIP CODE".tr.toUpperCase(),
+        alignment: Alignment.bottomCenter);
+  }
+
+  /// Section Widget
+  Widget _buildCity() {
+    return CustomTextFormField(
+        width: 90.h,
+        controller: controller.CityController,
+        hintText: "CITY".tr.toUpperCase(),
+        alignment: Alignment.bottomCenter);
+  }
+
+  /// Section Widget
+  Widget _buildProvince() {
+    return CustomTextFormField(
+        width: 90.h,
+        controller: controller.ProvinceController,
+        hintText: "PROVINCE".tr.toUpperCase(),
         alignment: Alignment.bottomCenter);
   }
 
@@ -534,6 +517,14 @@ class SignUpScreen extends GetWidget<SignUpController> {
         width: 265.h,
         controller: controller.emailAddressController,
         alignment: Alignment.bottomCenter);
+  }
+
+  Widget _buildPassword() {
+    return CustomTextFormField(
+        width: 128.h,
+        controller: controller.PasswordController,
+        textInputAction: TextInputAction.done,
+        alignment: Alignment.bottomLeft);
   }
 
   /// Section Widget

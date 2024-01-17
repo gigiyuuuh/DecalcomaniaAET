@@ -87,7 +87,7 @@ class CustomRadioButton extends StatelessWidget {
         children: [
           Padding(
             child: radioButtonWidget,
-            padding: EdgeInsets.only(right: 8),
+            padding: EdgeInsets.only(right: 2),
           ),
           textWidget,
         ],
@@ -97,14 +97,14 @@ class CustomRadioButton extends StatelessWidget {
         children: [
           textWidget,
           Padding(
-            padding: EdgeInsets.only(left: 8),
+            padding: EdgeInsets.only(left: 2),
             child: radioButtonWidget,
           ),
         ],
       );
   Widget get textWidget => Text(
         text ?? "",
-        textAlign: textAlignment ?? TextAlign.center,
+        textAlign: textAlignment ?? TextAlign.left,
         style: textStyle ?? theme.textTheme.labelMedium,
       );
   Widget get radioButtonWidget => SizedBox(

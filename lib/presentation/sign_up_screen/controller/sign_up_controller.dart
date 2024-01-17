@@ -15,9 +15,17 @@ class SignUpController extends GetxController {
 
   TextEditingController zipcodeController = TextEditingController();
 
+  TextEditingController CityController = TextEditingController();
+
+  TextEditingController ProvinceController = TextEditingController();
+
+  TextEditingController PhoneController = TextEditingController();
+
   TextEditingController usernameController = TextEditingController();
 
   TextEditingController emailAddressController = TextEditingController();
+
+  TextEditingController PasswordController = TextEditingController();
 
   TextEditingController confirmPasswordController = TextEditingController();
 
@@ -34,8 +42,12 @@ class SignUpController extends GetxController {
     lastNameController.dispose();
     nameController.dispose();
     zipcodeController.dispose();
+    CityController.dispose();
+    ProvinceController.dispose();
+    PhoneController.dispose();
     usernameController.dispose();
     emailAddressController.dispose();
+    PasswordController.dispose();
     confirmPasswordController.dispose();
   }
 }
