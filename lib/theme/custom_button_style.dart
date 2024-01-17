@@ -1,3 +1,4 @@
+// ignore: unnecessary_import
 import 'dart:ui';
 import 'package:decalcomania_aet/core/app_export.dart';
 import 'package:flutter/material.dart';

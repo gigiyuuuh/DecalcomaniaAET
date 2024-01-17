@@ -1,7 +1,9 @@
 import 'package:decalcomania_aet/core/app_export.dart';
 import 'package:flutter/cupertino.dart';
+// ignore: unnecessary_import
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomSwitch extends StatelessWidget {
   CustomSwitch({
     Key? key,

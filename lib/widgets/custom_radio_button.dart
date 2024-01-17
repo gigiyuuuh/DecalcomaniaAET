@@ -1,6 +1,7 @@
 import 'package:decalcomania_aet/core/app_export.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomRadioButton extends StatelessWidget {
   CustomRadioButton({
     Key? key,
