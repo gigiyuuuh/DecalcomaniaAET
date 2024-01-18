@@ -66,7 +66,10 @@ class SettingsScreen extends GetWidget<SettingsController> {
                           padding: EdgeInsets.only(right: 11.h),
                           child: _buildSkinTestAnalysis(
                               trophyImage: ImageConstant.imgBell,
-                              privacy: "lbl_notification".tr)),
+                              privacy: "lbl_notification".tr,
+                              onTapSkinTestAnalysis: () {
+                                onTapNotification();
+                              })),
                       Align(
                           alignment: Alignment.center,
                           child: Text("msg_the_skin_test_analysis".tr,
@@ -275,6 +278,12 @@ class SettingsScreen extends GetWidget<SettingsController> {
   onTapSkinTestAnalysis() {
     Get.toNamed(
       AppRoutes.privacyScreen,
+    );
+  }
+
+  onTapNotification() {
+    Get.toNamed(
+      AppRoutes.notificationScreen,
     );
   }
 

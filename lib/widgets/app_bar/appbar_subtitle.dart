@@ -27,7 +27,7 @@ class AppbarSubtitle extends StatelessWidget {
       child: Padding(
         padding: margin ?? EdgeInsets.zero,
         child: Container(
-          width: 42.h,
+          width: 30.h,
           decoration: AppDecoration.fillBlueGray.copyWith(
             borderRadius: BorderRadiusStyle.roundedBorder5,
           ),

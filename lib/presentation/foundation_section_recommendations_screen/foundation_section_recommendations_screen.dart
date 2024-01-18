@@ -111,31 +111,19 @@ class FoundationSectionRecommendationsScreen
             child: Stack(children: [
               AppbarTitleImage(
                   imagePath: ImageConstant.imgKhakiBeigeSimple51x100),
-              SizedBox(
-                  height: 51.v,
-                  width: double.maxFinite,
-                  child: Stack(children: [
-                    AppbarTitleImage(
-                        imagePath: ImageConstant.imgKhakiBeigeSimple51x100),
-                    Container(
+              Container(
+                  height: 24.adaptSize,
+                  width: 24.adaptSize,
+                  margin: EdgeInsets.fromLTRB(20.h, 8.v, 200.h, 19.v),
+                  child: Stack(alignment: Alignment.center, children: [
+                    CustomImageView(
+                        imagePath: ImageConstant.imgGrid,
                         height: 24.adaptSize,
                         width: 24.adaptSize,
-                        margin: EdgeInsets.fromLTRB(20.h, 8.v, 316.h, 19.v),
-                        child: Stack(alignment: Alignment.center, children: [
-                          CustomImageView(
-                              imagePath: ImageConstant.imgGrid,
-                              height: 24.adaptSize,
-                              width: 24.adaptSize,
-                              alignment: Alignment.center,
-                              onTap: () {
-                                onTapImgGrid();
-                              }),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgGrid,
-                              height: 24.adaptSize,
-                              width: 24.adaptSize,
-                              alignment: Alignment.center)
-                        ]))
+                        alignment: Alignment.center,
+                        onTap: () {
+                          onTapImgGrid();
+                        }),
                   ]))
             ])),
         actions: [
@@ -145,18 +133,13 @@ class FoundationSectionRecommendationsScreen
               margin: EdgeInsets.fromLTRB(24.h, 10.v, 24.h, 21.v),
               child: Stack(alignment: Alignment.center, children: [
                 CustomImageView(
-                    imagePath: ImageConstant.imgRewind,
+                    imagePath: ImageConstant.imgBag,
                     height: 24.adaptSize,
                     width: 24.adaptSize,
                     alignment: Alignment.center,
                     onTap: () {
-                      onTapImgRewind();
+                      onTapImgBag();
                     }),
-                CustomImageView(
-                    imagePath: ImageConstant.imgBagBlueGray900,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
-                    alignment: Alignment.center)
               ]))
         ]);
   }
@@ -200,10 +183,10 @@ class FoundationSectionRecommendationsScreen
         child: Obx(() => GridView.builder(
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisExtent: 150.v,
+                mainAxisExtent: 160.v,
                 crossAxisCount: 3,
-                mainAxisSpacing: 20.h,
-                crossAxisSpacing: 20.h),
+                mainAxisSpacing: 15.h,
+                crossAxisSpacing: 15.h),
             physics: const NeverScrollableScrollPhysics(),
             itemCount: controller.foundationSectionRecommendationsModelObj.value
                 .foundationsectionrecommendationgridItemList.value.length,
@@ -268,7 +251,7 @@ class FoundationSectionRecommendationsScreen
   }
 
   /// Navigates to the bookmarkScreen when the action is triggered.
-  onTapImgRewind() {
+  onTapImgBag() {
     Get.toNamed(
       AppRoutes.bookmarkScreen,
     );

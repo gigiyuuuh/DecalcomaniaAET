@@ -474,7 +474,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
     return Align(
         alignment: Alignment.center,
         child: Padding(
-            padding: EdgeInsets.only(right: 20.h),
+            padding: EdgeInsets.only(right: 10.h),
             child: Obx(() => Row(children: [
                   CustomRadioButton(
                       text: "lbl_male".tr.toUpperCase(),

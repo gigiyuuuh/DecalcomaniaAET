@@ -146,6 +146,7 @@ class LogInPageScreen extends GetWidget<LogInPageController> {
         }
         return null;
       },
+      obscureText: true,
     );
   }
 

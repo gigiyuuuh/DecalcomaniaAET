@@ -42,7 +42,7 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                   _buildEditProfile(),
                   SizedBox(height: 23.v),
                   Container(
-                    margin: EdgeInsets.only(right: 1.h),
+                    margin: EdgeInsets.only(right: 2.h),
                     padding: EdgeInsets.symmetric(
                       horizontal: 25.h,
                       vertical: 12.v,
@@ -152,7 +152,7 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
             alignment: Alignment.bottomRight,
             child: Padding(
               padding: EdgeInsets.only(
-                right: 105.h,
+                right: 180.h,
                 bottom: 13.v,
               ),
               child: Text(
@@ -164,7 +164,7 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
           Align(
             alignment: Alignment.bottomRight,
             child: Padding(
-              padding: EdgeInsets.only(right: 59.h),
+              padding: EdgeInsets.only(right: 145.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 mainAxisSize: MainAxisSize.min,
@@ -204,17 +204,17 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
   Widget _buildEditProfile() {
     return Padding(
       padding: EdgeInsets.only(
-        left: 22.h,
-        right: 26.h,
+        left: 26.h,
+        right: 20.h,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 111.h,
+            width: 100.h,
             padding: EdgeInsets.symmetric(
               horizontal: 30.h,
-              vertical: 1.v,
+              vertical: 3.v,
             ),
             decoration: AppDecoration.fillBlueGray.copyWith(
               borderRadius: BorderRadiusStyle.circleBorder10,
@@ -227,11 +227,11 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
             ),
           ),
           Container(
-            width: 172.h,
-            margin: EdgeInsets.only(left: 4.h),
+            width: 135.h,
+            margin: EdgeInsets.only(left: 1.h),
             padding: EdgeInsets.symmetric(
               horizontal: 30.h,
-              vertical: 1.v,
+              vertical: 3.v,
             ),
             decoration: AppDecoration.fillBlueGray.copyWith(
               borderRadius: BorderRadiusStyle.circleBorder10,
@@ -297,16 +297,9 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
     }
   }
 
-  onTapImgGrid() {
+  onTapImgCursor() {
     Get.toNamed(
-      AppRoutes.settingsScreen,
-    );
-  }
-
-  /// Navigates to the bookmarkScreen when the action is triggered.
-  onTapImgRewind() {
-    Get.toNamed(
-      AppRoutes.bookmarkScreen,
+      AppRoutes.homeScreenContainer1Screen,
     );
   }
 }

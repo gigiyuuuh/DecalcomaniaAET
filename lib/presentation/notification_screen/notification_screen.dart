@@ -2,6 +2,7 @@ import 'controller/notification_controller.dart';
 import 'package:decalcomania_aet/core/app_export.dart';
 import 'package:decalcomania_aet/widgets/app_bar/appbar_subtitle.dart';
 import 'package:decalcomania_aet/widgets/app_bar/appbar_title_image.dart';
+// ignore: unused_import
 import 'package:decalcomania_aet/widgets/app_bar/appbar_trailing_image.dart';
 import 'package:decalcomania_aet/widgets/app_bar/custom_app_bar.dart';
 import 'package:decalcomania_aet/widgets/custom_switch.dart';
@@ -24,11 +25,12 @@ class NotificationScreen extends GetWidget<NotificationController> {
                         imagePath: ImageConstant.imgBell,
                         height: 24.adaptSize,
                         width: 24.adaptSize,
-                        margin: EdgeInsets.only(top: 10.v, bottom: 6.v)),
+                        margin:
+                            EdgeInsets.only(top: 7.v, bottom: 8.v, right: 3.h)),
                     Text("lbl_notification".tr,
-                        style: CustomTextStyles.headlineSmallBaloo2Gray900)
+                        style: theme.textTheme.titleLarge)
                   ]),
-                  SizedBox(height: 42.v),
+                  SizedBox(height: 30.v),
                   _buildShowNotifications(),
                   SizedBox(height: 16.v),
                   _buildLockScreenNotifications(),
@@ -49,20 +51,31 @@ class NotificationScreen extends GetWidget<NotificationController> {
         title: SizedBox(
             height: 51.v,
             width: double.maxFinite,
-            child: Stack(alignment: Alignment.topCenter, children: [
+            child: Stack(alignment: Alignment.centerLeft, children: [
               AppbarTitleImage(
                   imagePath: ImageConstant.imgKhakiBeigeSimple51x100),
               AppbarSubtitle(
                   text: "lbl_back".tr,
-                  margin: EdgeInsets.fromLTRB(33.h, 9.v, 285.h, 22.v),
+                  margin: EdgeInsets.fromLTRB(35.h, 9.v, 235.h, 26.v),
                   onTap: () {
                     onTapBACK();
                   })
             ])),
         actions: [
-          AppbarTrailingImage(
-              imagePath: ImageConstant.imgClose,
-              margin: EdgeInsets.fromLTRB(24.h, 11.v, 24.h, 20.v))
+          Container(
+              height: 24.adaptSize,
+              width: 24.adaptSize,
+              margin: EdgeInsets.fromLTRB(24.h, 10.v, 24.h, 21.v),
+              child: Stack(alignment: Alignment.center, children: [
+                CustomImageView(
+                    imagePath: ImageConstant.imgClose,
+                    height: 24.adaptSize,
+                    width: 24.adaptSize,
+                    alignment: Alignment.center,
+                    onTap: () {
+                      onTapImgClose();
+                    })
+              ]))
         ]);
   }
 
@@ -72,8 +85,7 @@ class NotificationScreen extends GetWidget<NotificationController> {
         padding: EdgeInsets.only(left: 4.h),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Text("msg_show_notifications".tr,
-              style: CustomTextStyles.titleLargeBaloo2),
+          Text("msg_show_notifications".tr, style: theme.textTheme.titleLarge),
           Obx(() => CustomSwitch(
               margin: EdgeInsets.only(top: 3.v),
               value: controller.isSelectedSwitch.value,
@@ -85,16 +97,19 @@ class NotificationScreen extends GetWidget<NotificationController> {
 
   /// Section Widget
   Widget _buildLockScreenNotifications() {
-    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Text("msg_lock_screen_notifications".tr,
-          style: CustomTextStyles.titleLargeBaloo2),
-      Obx(() => CustomSwitch(
-          margin: EdgeInsets.only(left: 13.h, top: 3.v),
-          value: controller.isSelectedSwitch1.value,
-          onChange: (value) {
-            controller.isSelectedSwitch1.value = value;
-          }))
-    ]);
+    return Padding(
+        padding: EdgeInsets.only(left: 4.h),
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          Text("msg_lock_screen_notifications".tr,
+              style: theme.textTheme.titleLarge),
+          Obx(() => CustomSwitch(
+              margin: EdgeInsets.only(left: 13.h, top: 3.v),
+              value: controller.isSelectedSwitch1.value,
+              onChange: (value) {
+                controller.isSelectedSwitch1.value = value;
+              }))
+        ]));
   }
 
   /// Section Widget
@@ -103,8 +118,7 @@ class NotificationScreen extends GetWidget<NotificationController> {
         padding: EdgeInsets.only(left: 2.h),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Text("msg_push_notifications".tr,
-              style: CustomTextStyles.titleLargeBaloo2),
+          Text("msg_push_notifications".tr, style: theme.textTheme.titleLarge),
           Obx(() => CustomSwitch(
               margin: EdgeInsets.only(top: 4.v),
               value: controller.isSelectedSwitch2.value,
@@ -120,7 +134,7 @@ class NotificationScreen extends GetWidget<NotificationController> {
         padding: EdgeInsets.only(left: 4.h),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Text("lbl_allow_sound".tr, style: CustomTextStyles.titleLargeBaloo2),
+          Text("lbl_allow_sound".tr, style: theme.textTheme.titleLarge),
           Obx(() => CustomSwitch(
               margin: EdgeInsets.only(top: 3.v),
               value: controller.isSelectedSwitch3.value,
@@ -136,8 +150,7 @@ class NotificationScreen extends GetWidget<NotificationController> {
         padding: EdgeInsets.only(left: 4.h),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Text("lbl_allow_vibration".tr,
-              style: CustomTextStyles.titleLargeBaloo2),
+          Text("lbl_allow_vibration".tr, style: theme.textTheme.titleLarge),
           Obx(() => CustomSwitch(
               margin: EdgeInsets.only(top: 5.v),
               value: controller.isSelectedSwitch4.value,
@@ -151,6 +164,12 @@ class NotificationScreen extends GetWidget<NotificationController> {
   onTapBACK() {
     Get.toNamed(
       AppRoutes.settingsScreen,
+    );
+  }
+
+  onTapImgClose() {
+    Get.toNamed(
+      AppRoutes.homeScreenContainer1Screen,
     );
   }
 }

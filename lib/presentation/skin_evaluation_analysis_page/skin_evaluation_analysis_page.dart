@@ -34,8 +34,8 @@ class SkinEvaluationAnalysisPage extends StatelessWidget {
           CustomImageView(
               imagePath: ImageConstant.imgVector,
               height: 20.v,
-              width: 25.h,
-              margin: EdgeInsets.only(top: 38.v, bottom: 1.v),
+              width: 20.h,
+              margin: EdgeInsets.only(top: 2.v, bottom: 1.v),
               onTap: () {
                 onTapImgVector();
               }),
@@ -48,6 +48,8 @@ class SkinEvaluationAnalysisPage extends StatelessWidget {
 
   /// Navigates to the previous screen.
   onTapImgVector() {
-    Get.back();
+    Get.toNamed(
+      AppRoutes.homeScreenContainer1Screen,
+    );
   }
 }

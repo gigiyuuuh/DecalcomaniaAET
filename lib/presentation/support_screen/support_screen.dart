@@ -2,7 +2,6 @@ import 'controller/support_controller.dart';
 import 'package:decalcomania_aet/core/app_export.dart';
 import 'package:decalcomania_aet/widgets/app_bar/appbar_subtitle.dart';
 import 'package:decalcomania_aet/widgets/app_bar/appbar_title_image.dart';
-import 'package:decalcomania_aet/widgets/app_bar/appbar_trailing_image.dart';
 import 'package:decalcomania_aet/widgets/app_bar/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -59,20 +58,31 @@ class SupportScreen extends GetWidget<SupportController> {
         title: SizedBox(
             height: 51.v,
             width: double.maxFinite,
-            child: Stack(alignment: Alignment.topCenter, children: [
+            child: Stack(alignment: Alignment.centerLeft, children: [
               AppbarTitleImage(
                   imagePath: ImageConstant.imgKhakiBeigeSimple51x100),
               AppbarSubtitle(
                   text: "lbl_back".tr,
-                  margin: EdgeInsets.fromLTRB(33.h, 9.v, 285.h, 22.v),
+                  margin: EdgeInsets.fromLTRB(35.h, 9.v, 235.h, 26.v),
                   onTap: () {
                     onTapBACK();
                   })
             ])),
         actions: [
-          AppbarTrailingImage(
-              imagePath: ImageConstant.imgClose,
-              margin: EdgeInsets.fromLTRB(24.h, 11.v, 24.h, 20.v))
+          Container(
+              height: 24.adaptSize,
+              width: 24.adaptSize,
+              margin: EdgeInsets.fromLTRB(24.h, 10.v, 24.h, 21.v),
+              child: Stack(alignment: Alignment.center, children: [
+                CustomImageView(
+                    imagePath: ImageConstant.imgClose,
+                    height: 24.adaptSize,
+                    width: 24.adaptSize,
+                    alignment: Alignment.center,
+                    onTap: () {
+                      onTapImgClose();
+                    })
+              ]))
         ]);
   }
 
@@ -100,10 +110,15 @@ class SupportScreen extends GetWidget<SupportController> {
         ]));
   }
 
-  /// Navigates to the settingsScreen when the action is triggered.
   onTapBACK() {
     Get.toNamed(
       AppRoutes.settingsScreen,
+    );
+  }
+
+  onTapImgClose() {
+    Get.toNamed(
+      AppRoutes.homeScreenContainer1Screen,
     );
   }
 
