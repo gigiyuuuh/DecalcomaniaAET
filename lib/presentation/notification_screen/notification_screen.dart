@@ -51,7 +51,7 @@ class NotificationScreen extends GetWidget<NotificationController> {
             width: double.maxFinite,
             child: Stack(alignment: Alignment.topCenter, children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x100),
               AppbarSubtitle(
                   text: "lbl_back".tr,
                   margin: EdgeInsets.fromLTRB(33.h, 9.v, 285.h, 22.v),

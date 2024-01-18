@@ -24,7 +24,7 @@ class FoundationsectionrecommendationgridItemWidget extends StatelessWidget {
         imagePath:
             foundationsectionrecommendationgridItemModelObj.rectangle!.value,
         height: 120.v,
-        width: 90.h,
+        width: 50.h,
       ),
     );
   }

@@ -22,7 +22,7 @@ class FoundationtextItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 90.h,
+      width: 95.h,
       child: Padding(
         padding: EdgeInsets.only(bottom: 1.v),
         child: Column(
@@ -30,8 +30,8 @@ class FoundationtextItemWidget extends StatelessWidget {
             Obx(
               () => CustomImageView(
                 imagePath: foundationtextItemModelObj.foundationImage!.value,
-                height: 120.v,
-                width: 90.h,
+                height: 145.v,
+                width: 60.h,
                 onTap: () {
                   onTapImgFoundationImage!.call();
                 },
@@ -40,7 +40,7 @@ class FoundationtextItemWidget extends StatelessWidget {
             Obx(
               () => Text(
                 foundationtextItemModelObj.foundationText!.value,
-                style: CustomTextStyles.labelLargeMedium,
+                style: theme.textTheme.labelLarge,
               ),
             ),
           ],

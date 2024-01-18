@@ -129,9 +129,7 @@ class SettingsScreen extends GetWidget<SettingsController> {
             width: double.maxFinite,
             child: Stack(alignment: Alignment.center, children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
-              AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200)
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x100),
             ])),
         actions: [
           Container(
@@ -140,15 +138,13 @@ class SettingsScreen extends GetWidget<SettingsController> {
               margin: EdgeInsets.fromLTRB(24.h, 10.v, 24.h, 21.v),
               child: Stack(alignment: Alignment.topRight, children: [
                 CustomImageView(
-                    imagePath: ImageConstant.imgRewind,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
-                    alignment: Alignment.topRight),
-                CustomImageView(
                     imagePath: ImageConstant.imgClose,
                     height: 24.adaptSize,
                     width: 24.adaptSize,
-                    alignment: Alignment.topRight)
+                    alignment: Alignment.topRight,
+                    onTap: () {
+                      onTapImgClose();
+                    })
               ]))
         ]);
   }
@@ -266,6 +262,12 @@ class SettingsScreen extends GetWidget<SettingsController> {
   onTapTxtEditProfile() {
     Get.toNamed(
       AppRoutes.editProfileScreen,
+    );
+  }
+
+  onTapImgClose() {
+    Get.toNamed(
+      AppRoutes.homeScreenContainer1Screen,
     );
   }
 

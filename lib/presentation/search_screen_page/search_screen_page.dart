@@ -49,32 +49,20 @@ class SearchScreenPage extends StatelessWidget {
             width: double.maxFinite,
             child: Stack(children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
-              SizedBox(
-                  height: 51.v,
-                  width: double.maxFinite,
-                  child: Stack(children: [
-                    AppbarTitleImage(
-                        imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
-                    Container(
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x100),
+              Container(
+                  height: 24.adaptSize,
+                  width: 24.adaptSize,
+                  margin: EdgeInsets.fromLTRB(20.h, 8.v, 200.h, 19.v),
+                  child: Stack(alignment: Alignment.center, children: [
+                    CustomImageView(
+                        imagePath: ImageConstant.imgGrid,
                         height: 24.adaptSize,
                         width: 24.adaptSize,
-                        margin: EdgeInsets.fromLTRB(20.h, 8.v, 316.h, 19.v),
-                        child: Stack(alignment: Alignment.center, children: [
-                          CustomImageView(
-                              imagePath: ImageConstant.imgGrid,
-                              height: 24.adaptSize,
-                              width: 24.adaptSize,
-                              alignment: Alignment.center,
-                              onTap: () {
-                                onTapImgGrid();
-                              }),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgGrid,
-                              height: 24.adaptSize,
-                              width: 24.adaptSize,
-                              alignment: Alignment.center)
-                        ]))
+                        alignment: Alignment.center,
+                        onTap: () {
+                          onTapImgGrid();
+                        }),
                   ]))
             ])),
         actions: [
@@ -84,18 +72,13 @@ class SearchScreenPage extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(24.h, 10.v, 24.h, 21.v),
               child: Stack(alignment: Alignment.center, children: [
                 CustomImageView(
-                    imagePath: ImageConstant.imgRewind,
+                    imagePath: ImageConstant.imgBagBlueGray900,
                     height: 24.adaptSize,
                     width: 24.adaptSize,
                     alignment: Alignment.center,
                     onTap: () {
-                      onTapImgRewind();
-                    }),
-                CustomImageView(
-                    imagePath: ImageConstant.imgBagBlueGray900,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
-                    alignment: Alignment.center)
+                      onTapImgBag();
+                    })
               ]))
         ]);
   }
@@ -108,7 +91,7 @@ class SearchScreenPage extends StatelessWidget {
   }
 
   /// Navigates to the bookmarkScreen when the action is triggered.
-  onTapImgRewind() {
+  onTapImgBag() {
     Get.toNamed(
       AppRoutes.bookmarkScreen,
     );

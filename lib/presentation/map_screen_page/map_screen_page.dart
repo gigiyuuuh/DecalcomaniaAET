@@ -19,7 +19,7 @@ class MapScreenPage extends StatelessWidget {
             appBar: _buildAppBar(),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 19.h, vertical: 6.v),
+                padding: EdgeInsets.symmetric(horizontal: 10.h, vertical: 6.v),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,79 +120,31 @@ class MapScreenPage extends StatelessWidget {
             width: double.maxFinite,
             child: Stack(children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x100),
               SizedBox(
                   height: 51.v,
                   width: double.maxFinite,
                   child: Stack(children: [
-                    AppbarTitleImage(
-                        imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
                     SizedBox(
                         height: 51.v,
                         width: double.maxFinite,
                         child: Stack(alignment: Alignment.center, children: [
-                          SizedBox(
-                              height: 51.v,
-                              width: double.maxFinite,
-                              child:
-                                  Stack(alignment: Alignment.center, children: [
-                                Container(
+                          Container(
+                              height: 24.adaptSize,
+                              width: 24.adaptSize,
+                              margin:
+                                  EdgeInsets.fromLTRB(20.h, 8.v, 260.h, 19.v),
+                              child: Stack(children: [
+                                CustomImageView(
+                                    imagePath: ImageConstant.imgGrid,
                                     height: 24.adaptSize,
                                     width: 24.adaptSize,
-                                    margin: EdgeInsets.fromLTRB(
-                                        20.h, 8.v, 316.h, 19.v),
-                                    child: Stack(children: [
-                                      CustomImageView(
-                                          imagePath: ImageConstant.imgGrid,
-                                          height: 24.adaptSize,
-                                          width: 24.adaptSize,
-                                          alignment: Alignment.center,
-                                          onTap: () {
-                                            onTapImgGrid();
-                                          }),
-                                      SizedBox(
-                                          height: 24.adaptSize,
-                                          width: 24.adaptSize,
-                                          child: Stack(children: [
-                                            CustomImageView(
-                                                imagePath:
-                                                    ImageConstant.imgGrid,
-                                                height: 24.adaptSize,
-                                                width: 24.adaptSize,
-                                                alignment: Alignment.center),
-                                            SizedBox(
-                                                height: 24.adaptSize,
-                                                width: 24.adaptSize,
-                                                child: Stack(
-                                                    alignment: Alignment.center,
-                                                    children: [
-                                                      CustomImageView(
-                                                          imagePath:
-                                                              ImageConstant
-                                                                  .imgGrid,
-                                                          height: 24.adaptSize,
-                                                          width: 24.adaptSize,
-                                                          alignment:
-                                                              Alignment.center),
-                                                      CustomImageView(
-                                                          imagePath:
-                                                              ImageConstant
-                                                                  .imgGrid,
-                                                          height: 24.adaptSize,
-                                                          width: 24.adaptSize,
-                                                          alignment:
-                                                              Alignment.center)
-                                                    ]))
-                                          ]))
-                                    ])),
-                                AppbarTitleImage(
-                                    imagePath:
-                                        ImageConstant.imgKhakiBeigeSimple51x200)
+                                    alignment: Alignment.center,
+                                    onTap: () {
+                                      onTapImgGrid();
+                                    }),
                               ])),
-                          AppbarTitleImage(
-                              imagePath:
-                                  ImageConstant.imgKhakiBeigeSimple51x200)
-                        ]))
+                        ])),
                   ]))
             ])),
         actions: [
@@ -201,14 +153,6 @@ class MapScreenPage extends StatelessWidget {
               width: 24.adaptSize,
               margin: EdgeInsets.fromLTRB(24.h, 10.v, 24.h, 21.v),
               child: Stack(children: [
-                CustomImageView(
-                    imagePath: ImageConstant.imgRewind,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
-                    alignment: Alignment.topRight,
-                    onTap: () {
-                      onTapImgRewind();
-                    }),
                 SizedBox(
                     height: 24.adaptSize,
                     width: 24.adaptSize,
@@ -217,22 +161,10 @@ class MapScreenPage extends StatelessWidget {
                           imagePath: ImageConstant.imgBagBlueGray900,
                           height: 24.adaptSize,
                           width: 24.adaptSize,
-                          alignment: Alignment.center),
-                      SizedBox(
-                          height: 24.adaptSize,
-                          width: 24.adaptSize,
-                          child: Stack(alignment: Alignment.center, children: [
-                            CustomImageView(
-                                imagePath: ImageConstant.imgRewind,
-                                height: 24.adaptSize,
-                                width: 24.adaptSize,
-                                alignment: Alignment.topRight),
-                            CustomImageView(
-                                imagePath: ImageConstant.imgBagBlueGray900,
-                                height: 24.adaptSize,
-                                width: 24.adaptSize,
-                                alignment: Alignment.center)
-                          ]))
+                          alignment: Alignment.center,
+                          onTap: () {
+                            onTapImgBag();
+                          }),
                     ]))
               ]))
         ]);
@@ -246,7 +178,7 @@ class MapScreenPage extends StatelessWidget {
   }
 
   /// Navigates to the bookmarkScreen when the action is triggered.
-  onTapImgRewind() {
+  onTapImgBag() {
     Get.toNamed(
       AppRoutes.bookmarkScreen,
     );

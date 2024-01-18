@@ -36,7 +36,7 @@ class ImageConstant {
   static String imgLockBlueGray400 = '$imagePath/img_lock_blue_gray_400.svg';
 
   // Skin Evaluation Analysis images
-  static String imgVector9 = '$imagePath/img_vector_9.svg';
+  static String imgVector = '$imagePath/img_vector.png';
 
   static String imgInfoBlueGray400 = '$imagePath/img_info_blue_gray_400.svg';
 
@@ -46,7 +46,7 @@ class ImageConstant {
   static String imgRewindGray600 = '$imagePath/img_rewind_gray_600.svg';
 
   // Common images
-  static String imgKhakiBeigeSimple51x200 =
+  static String imgKhakiBeigeSimple51x100 =
       '$imagePath/img_khaki_beige_simple_51x360.png';
 
   static String imgClose = '$imagePath/img_close.svg';

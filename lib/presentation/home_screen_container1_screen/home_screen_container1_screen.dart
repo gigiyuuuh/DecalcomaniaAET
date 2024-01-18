@@ -8,6 +8,7 @@ import 'package:decalcomania_aet/presentation/profile_screen_page/profile_screen
 import 'package:decalcomania_aet/presentation/search_screen_page/search_screen_page.dart';
 import 'package:decalcomania_aet/presentation/skin_evaluation_analysis_page/skin_evaluation_analysis_page.dart';
 import 'package:decalcomania_aet/widgets/custom_bottom_bar.dart';
+// ignore: unused_import
 import 'package:decalcomania_aet/widgets/settings_button.dart';
 import 'package:flutter/material.dart';
 
@@ -20,14 +21,6 @@ class HomeScreenContainer1Screen
     return SafeArea(
       child: Scaffold(
         backgroundColor: appTheme.gray50,
-        appBar: AppBar(
-          // Remove the title
-          title: null,
-          // Add the SettingsButton to the leading property
-          leading: SettingsButton(onPressed: () {
-            // Handle the Settings button press here
-          }),
-        ),
         body: Navigator(
           key: Get.nestedKey(1),
           initialRoute: AppRoutes.homeScreenContainerPage,

@@ -110,13 +110,13 @@ class FoundationSectionRecommendationsScreen
             width: double.maxFinite,
             child: Stack(children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x100),
               SizedBox(
                   height: 51.v,
                   width: double.maxFinite,
                   child: Stack(children: [
                     AppbarTitleImage(
-                        imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
+                        imagePath: ImageConstant.imgKhakiBeigeSimple51x100),
                     Container(
                         height: 24.adaptSize,
                         width: 24.adaptSize,
@@ -200,7 +200,7 @@ class FoundationSectionRecommendationsScreen
         child: Obx(() => GridView.builder(
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisExtent: 121.v,
+                mainAxisExtent: 150.v,
                 crossAxisCount: 3,
                 mainAxisSpacing: 20.h,
                 crossAxisSpacing: 20.h),

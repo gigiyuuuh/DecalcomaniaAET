@@ -32,12 +32,12 @@ class SkinEvaluationAnalysisPage extends StatelessWidget {
         decoration: AppDecoration.fillWhiteA,
         child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
           CustomImageView(
-              imagePath: ImageConstant.imgVector9,
+              imagePath: ImageConstant.imgVector,
               height: 20.v,
               width: 25.h,
               margin: EdgeInsets.only(top: 38.v, bottom: 1.v),
               onTap: () {
-                onTapImgVectorNine();
+                onTapImgVector();
               }),
           Padding(
               padding: EdgeInsets.only(left: 40.h, top: 40.v),
@@ -47,7 +47,7 @@ class SkinEvaluationAnalysisPage extends StatelessWidget {
   }
 
   /// Navigates to the previous screen.
-  onTapImgVectorNine() {
+  onTapImgVector() {
     Get.back();
   }
 }

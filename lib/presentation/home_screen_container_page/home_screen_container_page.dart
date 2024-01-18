@@ -25,25 +25,25 @@ class HomeScreenContainerPage extends StatelessWidget {
             appBar: _buildAppBar(),
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(vertical: 6.v),
+                padding: EdgeInsets.symmetric(vertical: 15.v),
                 child: Column(children: [
                   _buildCollection(),
                   SizedBox(height: 8.v),
                   Divider(color: appTheme.gray40002),
                   SizedBox(height: 8.v),
                   _buildAd1(),
-                  SizedBox(height: 28.v),
+                  SizedBox(height: 20.v),
                   _buildFoundationText(),
-                  SizedBox(height: 13.v),
+                  SizedBox(height: 5.v),
                   CustomElevatedButton(
-                      width: 110.h,
+                      width: 80.h,
                       text: "lbl_view_more".tr,
                       buttonStyle: CustomButtonStyles.fillBlueGray,
                       buttonTextStyle: CustomTextStyles.labelLargeMedium),
-                  SizedBox(height: 31.v),
+                  SizedBox(height: 21.v),
                   Text("msg_this_week_s_people_s".tr,
                       style: CustomTextStyles.labelLargeBluegray400Medium),
-                  SizedBox(height: 9.v),
+                  SizedBox(height: 20.v),
                   _buildText()
                 ]))));
   }
@@ -54,13 +54,14 @@ class HomeScreenContainerPage extends StatelessWidget {
         centerTitle: true,
         title: SizedBox(
             height: 51.v,
+            width: double.maxFinite,
             child: Stack(children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x100),
               Container(
                   height: 24.adaptSize,
                   width: 24.adaptSize,
-                  margin: EdgeInsets.fromLTRB(20.h, 8.v, 316.h, 19.v),
+                  margin: EdgeInsets.fromLTRB(20.h, 8.v, 200.h, 19.v),
                   child: Stack(alignment: Alignment.center, children: [
                     CustomImageView(
                         imagePath: ImageConstant.imgGrid,
@@ -79,18 +80,13 @@ class HomeScreenContainerPage extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(24.h, 10.v, 24.h, 21.v),
               child: Stack(alignment: Alignment.center, children: [
                 CustomImageView(
-                    imagePath: ImageConstant.imgRewind,
+                    imagePath: ImageConstant.imgBag,
                     height: 24.adaptSize,
                     width: 24.adaptSize,
                     alignment: Alignment.center,
                     onTap: () {
-                      onTapImgRewind();
+                      onTapImgBag();
                     }),
-                CustomImageView(
-                    imagePath: ImageConstant.imgBagBlueGray900,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
-                    alignment: Alignment.center)
               ]))
         ]);
   }
@@ -191,13 +187,13 @@ class HomeScreenContainerPage extends StatelessWidget {
     return Container(
         decoration: AppDecoration.fillRed,
         child: CustomImageView(
-            imagePath: ImageConstant.imgImage9, height: 173.v, width: 360.h));
+            imagePath: ImageConstant.imgImage9, height: 165.v, width: 360.h));
   }
 
   /// Section Widget
   Widget _buildFoundationText() {
     return SizedBox(
-        height: 141.v,
+        height: 165.v,
         child: Obx(() => ListView.separated(
             padding: EdgeInsets.symmetric(horizontal: 24.h),
             scrollDirection: Axis.horizontal,
@@ -222,8 +218,8 @@ class HomeScreenContainerPage extends StatelessWidget {
   /// Section Widget
   Widget _buildText() {
     return SizedBox(
-        height: 140.v,
-        child: Obx(() => ListView.separated(
+      height: 165.v,
+      child: Obx(() => ListView.separated(
             padding: EdgeInsets.symmetric(horizontal: 24.h),
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) {
@@ -235,7 +231,9 @@ class HomeScreenContainerPage extends StatelessWidget {
               TextItemModel model = controller
                   .homeScreenContainerModelObj.value.textItemList.value[index];
               return TextItemWidget(model);
-            })));
+            },
+          )),
+    );
   }
 
   /// Navigates to the foundationSectionRecommendationsScreen when the action is triggered.
@@ -251,7 +249,7 @@ class HomeScreenContainerPage extends StatelessWidget {
   }
 
   /// Navigates to the bookmarkScreen when the action is triggered.
-  onTapImgRewind() {
+  onTapImgBag() {
     Get.toNamed(
       AppRoutes.bookmarkScreen,
     );

@@ -91,7 +91,7 @@ class SafetyScreen extends GetWidget<SafetyController> {
           alignment: Alignment.bottomCenter,
           children: [
             AppbarTitleImage(
-              imagePath: ImageConstant.imgKhakiBeigeSimple51x200,
+              imagePath: ImageConstant.imgKhakiBeigeSimple51x100,
             ),
             AppbarSubtitle(
               text: "lbl_back".tr,

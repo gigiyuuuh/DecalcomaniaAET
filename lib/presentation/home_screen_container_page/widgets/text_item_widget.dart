@@ -25,10 +25,16 @@ class TextItemWidget extends StatelessWidget {
           Obx(
             () => CustomImageView(
               imagePath: textItemModelObj.image!.value,
-              height: 120.v,
-              width: 90.h,
+              height: 145.v,
+              width: 60.h,
             ),
           ),
+          Obx(
+            () => Text(
+              textItemModelObj.text!.value,
+              style: theme.textTheme.labelLarge,
+            ),
+          )
         ],
       ),
     );

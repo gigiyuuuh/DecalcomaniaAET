@@ -9,6 +9,8 @@ class TextItemModel {
   }) {
     image = image ?? Rx(ImageConstant.imgRectangle39682);
     text = text ?? Rx("BLK");
+    text = text ?? Rx("ISSY");
+    text = text ?? Rx("GWRM");
     id = id ?? Rx("");
   }
 
