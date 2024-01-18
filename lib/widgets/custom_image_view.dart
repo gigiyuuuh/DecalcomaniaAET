@@ -7,23 +7,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomImageView extends StatelessWidget {
-  ///[imagePath] is required parameter for showing image
-  String? imagePath;
-
-  double? height;
-  double? width;
-  Color? color;
-  BoxFit? fit;
+  final String? imagePath;
+  final double? height;
+  final double? width;
+  final Color? color;
+  final BoxFit? fit;
   final String placeHolder;
-  Alignment? alignment;
-  VoidCallback? onTap;
-  EdgeInsetsGeometry? margin;
-  BorderRadius? radius;
-  BoxBorder? border;
+  final Alignment? alignment;
+  final VoidCallback? onTap;
+  final EdgeInsetsGeometry? margin;
+  final BorderRadius? radius;
+  final BoxBorder? border;
 
-  ///a [CustomImageView] it can be used for showing any type of images
-  /// it will shows the placeholder image if image is not found on network image
-  CustomImageView({
+  // A constructor with named parameters for better clarity
+  const CustomImageView({
+    Key? key, // Add this line
     this.imagePath,
     this.height,
     this.width,
@@ -35,7 +33,7 @@ class CustomImageView extends StatelessWidget {
     this.margin,
     this.border,
     this.placeHolder = 'assets/images/image_not_found.png',
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,101 +55,111 @@ class CustomImageView extends StatelessWidget {
     );
   }
 
-  ///build the image with border radius
-  _buildCircleImage() {
-    if (radius != null) {
-      return ClipRRect(
-        borderRadius: radius ?? BorderRadius.zero,
-        child: _buildImageWithBorder(),
-      );
-    } else {
-      return _buildImageWithBorder();
-    }
+  Widget _buildCircleImage() {
+    return ClipRRect(
+      borderRadius: radius ?? BorderRadius.zero,
+      child: _buildImageWithBorder(),
+    );
   }
 
-  ///build the image with border and border radius style
-  _buildImageWithBorder() {
-    if (border != null) {
-      return Container(
-        decoration: BoxDecoration(
-          border: border,
-          borderRadius: radius,
-        ),
-        child: _buildImageView(),
-      );
-    } else {
-      return _buildImageView();
-    }
+  Widget _buildImageWithBorder() {
+    return Container(
+      decoration: border != null
+          ? BoxDecoration(
+              border: border,
+              borderRadius: radius,
+            )
+          : null,
+      child: _buildImageView(),
+    );
   }
 
   Widget _buildImageView() {
     if (imagePath != null) {
       switch (imagePath!.imageType) {
         case ImageType.svg:
-          return Container(
-            height: height,
-            width: width,
-            child: SvgPicture.asset(
-              imagePath!,
-              height: height,
-              width: width,
-              fit: fit ?? BoxFit.contain,
-              colorFilter: ColorFilter.mode(
-                  color ?? Colors.transparent, BlendMode.srcIn),
-            ),
-          );
+          return _buildSvgImage();
         case ImageType.file:
-          return Image.file(
-            File(imagePath!),
-            height: height,
-            width: width,
-            fit: fit ?? BoxFit.cover,
-            color: color,
-          );
+          return _buildFileImage();
         case ImageType.network:
-          return CachedNetworkImage(
-            height: height,
-            width: width,
-            fit: fit,
-            imageUrl: imagePath!,
-            color: color,
-            placeholder: (context, url) => Container(
-              height: 30,
-              width: 30,
-              child: LinearProgressIndicator(
-                color: Colors.grey.shade200,
-                backgroundColor: Colors.grey.shade100,
-              ),
-            ),
-            errorWidget: (context, url, error) => Image.asset(
-              placeHolder,
-              height: height,
-              width: width,
-              fit: fit ?? BoxFit.cover,
-            ),
-          );
+          return _buildNetworkImage();
         case ImageType.png:
         default:
-          return Image.asset(
-            imagePath!,
-            height: height,
-            width: width,
-            fit: fit ?? BoxFit.cover,
-            color: color,
-          );
+          return _buildAssetImage();
       }
     }
-    return SizedBox();
+    return const SizedBox();
+  }
+
+  Widget _buildSvgImage() {
+    return SizedBox(
+      height: height,
+      width: width,
+      child: SvgPicture.asset(
+        imagePath!,
+        height: height,
+        width: width,
+        fit: fit ?? BoxFit.contain,
+        colorFilter: ColorFilter.mode(
+          color ?? Colors.transparent,
+          BlendMode.srcIn,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFileImage() {
+    return Image.file(
+      File(imagePath!),
+      height: height,
+      width: width,
+      fit: fit ?? BoxFit.cover,
+      color: color,
+    );
+  }
+
+  Widget _buildNetworkImage() {
+    return CachedNetworkImage(
+      height: height,
+      width: width,
+      fit: fit,
+      imageUrl: imagePath!,
+      color: color,
+      placeholder: (context, url) => SizedBox(
+        height: 30,
+        width: 30,
+        child: LinearProgressIndicator(
+          color: Colors.grey.shade200,
+          backgroundColor: Colors.grey.shade100,
+        ),
+      ),
+      errorWidget: (context, url, error) => Image.asset(
+        placeHolder,
+        height: height,
+        width: width,
+        fit: fit ?? BoxFit.cover,
+      ),
+    );
+  }
+
+  Widget _buildAssetImage() {
+    return Image.asset(
+      imagePath!,
+      height: height,
+      width: width,
+      fit: fit ?? BoxFit.cover,
+      color: color,
+    );
   }
 }
 
 extension ImageTypeExtension on String {
   ImageType get imageType {
-    if (this.startsWith('http') || this.startsWith('https')) {
+    if (startsWith('http') || startsWith('https')) {
       return ImageType.network;
-    } else if (this.endsWith('.svg')) {
+    } else if (endsWith('.svg')) {
       return ImageType.svg;
-    } else if (this.startsWith('file://')) {
+    } else if (startsWith('file://')) {
       return ImageType.file;
     } else {
       return ImageType.png;

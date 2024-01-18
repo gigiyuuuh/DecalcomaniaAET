@@ -8,31 +8,24 @@ import 'package:flutter/material.dart';
 /// current signUpModelObj
 class SignUpController extends GetxController {
   TextEditingController firstNameController = TextEditingController();
-
   TextEditingController lastNameController = TextEditingController();
-
   TextEditingController nameController = TextEditingController();
-
+  TextEditingController addressController = TextEditingController();
   TextEditingController zipcodeController = TextEditingController();
-
-  TextEditingController CityController = TextEditingController();
-
-  TextEditingController ProvinceController = TextEditingController();
-
-  TextEditingController PhoneController = TextEditingController();
-
+  TextEditingController cityController =
+      TextEditingController(); // Updated variable name
+  TextEditingController provinceController =
+      TextEditingController(); // Updated variable name
+  TextEditingController phoneController =
+      TextEditingController(); // Updated variable name
   TextEditingController usernameController = TextEditingController();
-
   TextEditingController emailAddressController = TextEditingController();
-
-  TextEditingController PasswordController = TextEditingController();
-
+  TextEditingController passwordController =
+      TextEditingController(); // Updated variable name
   TextEditingController confirmPasswordController = TextEditingController();
 
   Rx<SignUpModel> signUpModelObj = SignUpModel().obs;
-
   Rx<String> radioGroup = "".obs;
-
   Rx<String> genderValue = "".obs;
 
   @override
@@ -41,13 +34,14 @@ class SignUpController extends GetxController {
     firstNameController.dispose();
     lastNameController.dispose();
     nameController.dispose();
+    addressController.dispose();
     zipcodeController.dispose();
-    CityController.dispose();
-    ProvinceController.dispose();
-    PhoneController.dispose();
+    cityController.dispose();
+    provinceController.dispose();
+    phoneController.dispose();
     usernameController.dispose();
     emailAddressController.dispose();
-    PasswordController.dispose();
+    passwordController.dispose();
     confirmPasswordController.dispose();
   }
 }

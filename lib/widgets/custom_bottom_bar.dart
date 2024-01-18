@@ -16,27 +16,27 @@ class CustomBottomBar extends StatelessWidget {
     BottomMenuModel(
       icon: ImageConstant.imgHomeBlueGray400,
       activeIcon: ImageConstant.imgHomeBlueGray400,
-      type: BottomBarEnum.Homebluegray400,
+      type: BottomBarEnum.homeBluegray400,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgRewind,
       activeIcon: ImageConstant.imgRewind,
-      type: BottomBarEnum.Rewind,
+      type: BottomBarEnum.rewind,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgInfo,
       activeIcon: ImageConstant.imgInfo,
-      type: BottomBarEnum.Info,
+      type: BottomBarEnum.info,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgLinkedin,
       activeIcon: ImageConstant.imgLinkedin,
-      type: BottomBarEnum.Linkedin,
+      type: BottomBarEnum.linkedin,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgLock,
       activeIcon: ImageConstant.imgLock,
-      type: BottomBarEnum.Lock,
+      type: BottomBarEnum.lock,
     )
   ];
 
@@ -86,11 +86,11 @@ class CustomBottomBar extends StatelessWidget {
 }
 
 enum BottomBarEnum {
-  Homebluegray400,
-  Rewind,
-  Info,
-  Linkedin,
-  Lock,
+  homeBluegray400,
+  rewind,
+  info,
+  linkedin,
+  lock,
 }
 
 class BottomMenuModel {
@@ -108,12 +108,14 @@ class BottomMenuModel {
 }
 
 class DefaultWidget extends StatelessWidget {
+  const DefaultWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.all(10),
-      child: Center(
+      padding: const EdgeInsets.all(10),
+      child: const Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,

@@ -1,9 +1,11 @@
+import 'package:decalcomania_aet/presentation/home_screen_container_page/home_screen_container_page.dart';
 import 'package:decalcomania_aet/presentation/opening_screen/opening_screen.dart';
 import 'package:decalcomania_aet/presentation/opening_screen/binding/opening_binding.dart';
 import 'package:decalcomania_aet/presentation/change_password_screen/change_password_screen.dart';
 import 'package:decalcomania_aet/presentation/change_password_screen/binding/change_password_binding.dart';
 import 'package:decalcomania_aet/presentation/data_collection_screen/data_collection_screen.dart';
 import 'package:decalcomania_aet/presentation/data_collection_screen/binding/data_collection_binding.dart';
+import 'package:decalcomania_aet/presentation/profile_screen_page/profile_screen_page.dart';
 import 'package:decalcomania_aet/presentation/user_rights_screen/user_rights_screen.dart';
 import 'package:decalcomania_aet/presentation/user_rights_screen/binding/user_rights_binding.dart';
 import 'package:decalcomania_aet/presentation/policy_changes_screen/policy_changes_screen.dart';
@@ -107,35 +109,35 @@ class AppRoutes {
   static List<GetPage> pages = [
     GetPage(
       name: openingScreen,
-      page: () => OpeningScreen(),
+      page: () => const OpeningScreen(),
       bindings: [
         OpeningBinding(),
       ],
     ),
     GetPage(
       name: changePasswordScreen,
-      page: () => ChangePasswordScreen(),
+      page: () => const ChangePasswordScreen(),
       bindings: [
         ChangePasswordBinding(),
       ],
     ),
     GetPage(
       name: dataCollectionScreen,
-      page: () => DataCollectionScreen(),
+      page: () => const DataCollectionScreen(),
       bindings: [
         DataCollectionBinding(),
       ],
     ),
     GetPage(
       name: userRightsScreen,
-      page: () => UserRightsScreen(),
+      page: () => const UserRightsScreen(),
       bindings: [
         UserRightsBinding(),
       ],
     ),
     GetPage(
       name: policyChangesScreen,
-      page: () => PolicyChangesScreen(),
+      page: () => const PolicyChangesScreen(),
       bindings: [
         PolicyChangesBinding(),
       ],
@@ -149,70 +151,70 @@ class AppRoutes {
     ),
     GetPage(
       name: locationScreen,
-      page: () => LocationScreen(),
+      page: () => const LocationScreen(),
       bindings: [
         LocationBinding(),
       ],
     ),
     GetPage(
       name: privacyPolicyScreen,
-      page: () => PrivacyPolicyScreen(),
+      page: () => const PrivacyPolicyScreen(),
       bindings: [
         PrivacyPolicyBinding(),
       ],
     ),
     GetPage(
       name: helpCenterScreen,
-      page: () => HelpCenterScreen(),
+      page: () => const HelpCenterScreen(),
       bindings: [
         HelpCenterBinding(),
       ],
     ),
     GetPage(
       name: reportScreen,
-      page: () => ReportScreen(),
+      page: () => const ReportScreen(),
       bindings: [
         ReportBinding(),
       ],
     ),
     GetPage(
       name: notificationScreen,
-      page: () => NotificationScreen(),
+      page: () => const NotificationScreen(),
       bindings: [
         NotificationBinding(),
       ],
     ),
     GetPage(
       name: privacyScreen,
-      page: () => PrivacyScreen(),
+      page: () => const PrivacyScreen(),
       bindings: [
         PrivacyBinding(),
       ],
     ),
     GetPage(
       name: supportScreen,
-      page: () => SupportScreen(),
+      page: () => const SupportScreen(),
       bindings: [
         SupportBinding(),
       ],
     ),
     GetPage(
       name: bookmarkScreen,
-      page: () => BookmarkScreen(),
+      page: () => const BookmarkScreen(),
       bindings: [
         BookmarkBinding(),
       ],
     ),
     GetPage(
       name: editProfileScreen,
-      page: () => EditProfileScreen(),
+      page: () => const EditProfileScreen(),
       bindings: [
         EditProfileBinding(),
       ],
     ),
     GetPage(
       name: settingsScreen,
-      page: () => SettingsScreen(),
+      page: () => const SettingsScreen(),
       bindings: [
         SettingsBinding(),
       ],
@@ -226,21 +228,25 @@ class AppRoutes {
     ),
     GetPage(
       name: ndOpeningScreen,
-      page: () => NdOpeningScreen(),
+      page: () => const NdOpeningScreen(),
       bindings: [
         NdOpeningBinding(),
       ],
     ),
     GetPage(
       name: homeScreenContainer1Screen,
-      page: () => HomeScreenContainer1Screen(),
+      page: () => const HomeScreenContainer1Screen(),
       bindings: [
         HomeScreenContainer1Binding(),
       ],
     ),
     GetPage(
+      name: homeScreenContainerPage,
+      page: () => HomeScreenContainerPage(),
+    ),
+    GetPage(
       name: foundationSectionRecommendationsScreen,
-      page: () => FoundationSectionRecommendationsScreen(),
+      page: () => const FoundationSectionRecommendationsScreen(),
       bindings: [
         FoundationSectionRecommendationsBinding(),
       ],
@@ -254,14 +260,21 @@ class AppRoutes {
     ),
     GetPage(
       name: appNavigationScreen,
-      page: () => AppNavigationScreen(),
+      page: () => const AppNavigationScreen(),
+      bindings: [
+        AppNavigationBinding(),
+      ],
+    ),
+    GetPage(
+      name: profileScreenPage,
+      page: () => const ProfileScreenPage(),
       bindings: [
         AppNavigationBinding(),
       ],
     ),
     GetPage(
       name: initialRoute,
-      page: () => OpeningScreen(),
+      page: () => const OpeningScreen(),
       bindings: [
         OpeningBinding(),
       ],

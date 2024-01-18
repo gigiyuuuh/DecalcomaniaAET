@@ -214,7 +214,7 @@ class SettingsScreen extends GetWidget<SettingsController> {
               child: Text(privacy,
                   style: CustomTextStyles.titleLargeBaloo2Gray900
                       .copyWith(color: appTheme.gray900))),
-          Spacer(),
+          const Spacer(),
           CustomImageView(
               imagePath: ImageConstant.imgArrowLeft,
               height: 24.adaptSize,
@@ -226,15 +226,15 @@ class SettingsScreen extends GetWidget<SettingsController> {
   ///Handling route based on bottom click actions
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
-      case BottomBarEnum.Homebluegray400:
+      case BottomBarEnum.homeBluegray400:
         return AppRoutes.homeScreenContainerPage;
-      case BottomBarEnum.Rewind:
+      case BottomBarEnum.rewind:
         return AppRoutes.searchScreenPage;
-      case BottomBarEnum.Info:
+      case BottomBarEnum.info:
         return AppRoutes.skinEvaluationAnalysisPage;
-      case BottomBarEnum.Linkedin:
+      case BottomBarEnum.linkedin:
         return AppRoutes.mapScreenPage;
-      case BottomBarEnum.Lock:
+      case BottomBarEnum.lock:
         return AppRoutes.profileScreenPage;
       default:
         return "/";
@@ -253,9 +253,9 @@ class SettingsScreen extends GetWidget<SettingsController> {
       case AppRoutes.mapScreenPage:
         return MapScreenPage();
       case AppRoutes.profileScreenPage:
-        return ProfileScreenPage();
+        return const ProfileScreenPage();
       default:
-        return DefaultWidget();
+        return const DefaultWidget();
     }
   }
 

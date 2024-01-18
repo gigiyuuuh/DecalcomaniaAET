@@ -13,7 +13,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0XFFFFFFFF),
+        backgroundColor: const Color(0XFFFFFFFF),
         body: SizedBox(
           width: 375.h,
           child: Column(
@@ -22,7 +22,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0XFFFFFFFF),
                     ),
                     child: Column(
@@ -148,7 +148,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   /// Section Widget
   Widget _buildAppNavigation() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0XFFFFFFFF),
       ),
       child: Column(
@@ -162,7 +162,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                 "App Navigation".tr,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0XFF000000),
+                  color: const Color(0XFF000000),
                   fontSize: 20.fSize,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w400,
@@ -180,7 +180,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                     .tr,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0XFF888888),
+                  color: const Color(0XFF888888),
                   fontSize: 16.fSize,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w400,
@@ -192,7 +192,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
           Divider(
             height: 1.v,
             thickness: 1.v,
-            color: Color(0XFF000000),
+            color: const Color(0XFF000000),
           ),
         ],
       ),
@@ -209,7 +209,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
         onTapScreenTitle!.call();
       },
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0XFFFFFFFF),
         ),
         child: Column(
@@ -223,7 +223,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                   screenTitle,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Color(0XFF000000),
+                    color: const Color(0XFF000000),
                     fontSize: 20.fSize,
                     fontFamily: 'Roboto',
                     fontWeight: FontWeight.w400,
@@ -236,7 +236,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
             Divider(
               height: 1.v,
               thickness: 1.v,
-              color: Color(0XFF888888),
+              color: const Color(0XFF888888),
             ),
           ],
         ),

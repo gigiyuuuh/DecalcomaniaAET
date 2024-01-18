@@ -3,10 +3,15 @@ import 'models/profile_screen_model.dart';
 import 'package:decalcomania_aet/core/app_export.dart';
 import 'package:decalcomania_aet/widgets/app_bar/appbar_leading_image.dart';
 import 'package:decalcomania_aet/widgets/app_bar/custom_app_bar.dart';
+import 'package:decalcomania_aet/presentation/home_screen_container1_screen/home_screen_container1_screen.dart';
+import 'package:decalcomania_aet/presentation/map_screen_page/map_screen_page.dart';
+import 'package:decalcomania_aet/presentation/search_screen_page/search_screen_page.dart';
+import 'package:decalcomania_aet/presentation/skin_evaluation_analysis_page/skin_evaluation_analysis_page.dart';
+import 'package:decalcomania_aet/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreenPage extends StatefulWidget {
-  ProfileScreenPage({Key? key})
+  const ProfileScreenPage({Key? key})
       : super(
           key: key,
         );
@@ -246,6 +251,62 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
           ),
         ],
       ),
+    );
+  }
+
+  // ignore: unused_element
+  Widget _buildBottomBar() {
+    return CustomBottomBar(onChanged: (BottomBarEnum type) {
+      Get.toNamed(getCurrentRoute(type), id: 1);
+    });
+  }
+
+  ///Handling route based on bottom click actions
+  String getCurrentRoute(BottomBarEnum type) {
+    switch (type) {
+      case BottomBarEnum.homeBluegray400:
+        return AppRoutes.homeScreenContainer1Screen;
+      case BottomBarEnum.rewind:
+        return AppRoutes.searchScreenPage;
+      case BottomBarEnum.info:
+        return AppRoutes.skinEvaluationAnalysisPage;
+      case BottomBarEnum.linkedin:
+        return AppRoutes.mapScreenPage;
+      case BottomBarEnum.lock:
+        return AppRoutes.profileScreenPage;
+      default:
+        return "/";
+    }
+  }
+
+  ///Handling page based on route
+  Widget getCurrentPage(String currentRoute) {
+    switch (currentRoute) {
+      case AppRoutes.homeScreenContainer1Screen:
+        return HomeScreenContainer1Screen();
+      case AppRoutes.searchScreenPage:
+        return SearchScreenPage();
+      case AppRoutes.skinEvaluationAnalysisPage:
+        return SkinEvaluationAnalysisPage();
+      case AppRoutes.mapScreenPage:
+        return MapScreenPage();
+      case AppRoutes.profileScreenPage:
+        return const ProfileScreenPage();
+      default:
+        return const DefaultWidget();
+    }
+  }
+
+  onTapImgGrid() {
+    Get.toNamed(
+      AppRoutes.settingsScreen,
+    );
+  }
+
+  /// Navigates to the bookmarkScreen when the action is triggered.
+  onTapImgRewind() {
+    Get.toNamed(
+      AppRoutes.bookmarkScreen,
     );
   }
 }

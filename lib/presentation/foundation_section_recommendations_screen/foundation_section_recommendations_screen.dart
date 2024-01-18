@@ -1,3 +1,5 @@
+import 'package:decalcomania_aet/presentation/home_screen_container1_screen/home_screen_container1_screen.dart';
+
 import '../foundation_section_recommendations_screen/widgets/foundationsectionrecommendationgrid_item_widget.dart';
 import 'controller/foundation_section_recommendations_controller.dart';
 import 'models/foundationsectionrecommendationgrid_item_model.dart';
@@ -201,7 +203,7 @@ class FoundationSectionRecommendationsScreen
                 crossAxisCount: 3,
                 mainAxisSpacing: 20.h,
                 crossAxisSpacing: 20.h),
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: controller.foundationSectionRecommendationsModelObj.value
                 .foundationsectionrecommendationgridItemList.value.length,
             itemBuilder: (context, index) {
@@ -224,15 +226,15 @@ class FoundationSectionRecommendationsScreen
   ///Handling route based on bottom click actions
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
-      case BottomBarEnum.Homebluegray400:
-        return AppRoutes.homeScreenContainerPage;
-      case BottomBarEnum.Rewind:
+      case BottomBarEnum.homeBluegray400:
+        return AppRoutes.homeScreenContainer1Screen;
+      case BottomBarEnum.rewind:
         return AppRoutes.searchScreenPage;
-      case BottomBarEnum.Info:
+      case BottomBarEnum.info:
         return AppRoutes.skinEvaluationAnalysisPage;
-      case BottomBarEnum.Linkedin:
+      case BottomBarEnum.linkedin:
         return AppRoutes.mapScreenPage;
-      case BottomBarEnum.Lock:
+      case BottomBarEnum.lock:
         return AppRoutes.profileScreenPage;
       default:
         return "/";
@@ -242,8 +244,8 @@ class FoundationSectionRecommendationsScreen
   ///Handling page based on route
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
-      case AppRoutes.homeScreenContainerPage:
-        return HomeScreenContainerPage();
+      case AppRoutes.homeScreenContainer1Screen:
+        return HomeScreenContainer1Screen();
       case AppRoutes.searchScreenPage:
         return SearchScreenPage();
       case AppRoutes.skinEvaluationAnalysisPage:
@@ -251,9 +253,9 @@ class FoundationSectionRecommendationsScreen
       case AppRoutes.mapScreenPage:
         return MapScreenPage();
       case AppRoutes.profileScreenPage:
-        return ProfileScreenPage();
+        return const ProfileScreenPage();
       default:
-        return DefaultWidget();
+        return const DefaultWidget();
     }
   }
 

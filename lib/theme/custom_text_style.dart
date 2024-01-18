@@ -22,7 +22,7 @@ class CustomTextStyles {
         color: appTheme.gray90001,
       );
   static get bodySmallff638ea5 => theme.textTheme.bodySmall!.copyWith(
-        color: Color(0XFF638EA5),
+        color: const Color(0XFF638EA5),
         fontSize: 11.fSize,
       );
   // Headline style
@@ -82,12 +82,12 @@ class CustomTextStyles {
         color: appTheme.blueGray400,
       );
   static get labelMediumff1e1c1d => theme.textTheme.labelMedium!.copyWith(
-        color: Color(0XFF1E1C1D),
+        color: const Color(0XFF1E1C1D),
         fontSize: 11.fSize,
         fontWeight: FontWeight.w500,
       );
   static get labelMediumff638ea5 => theme.textTheme.labelMedium!.copyWith(
-        color: Color(0XFF638EA5),
+        color: const Color(0XFF638EA5),
         fontSize: 11.fSize,
         fontWeight: FontWeight.w500,
       );

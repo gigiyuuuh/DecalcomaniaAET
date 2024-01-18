@@ -26,7 +26,7 @@ class AppbarTrailingButton extends StatelessWidget {
         padding: margin ?? EdgeInsets.zero,
         child: CustomElevatedButton(
           width: 44.h,
-          text: "lbl_skip".tr,
+          text: "Skip".tr,
           buttonStyle: CustomButtonStyles.fillBlueGray,
           buttonTextStyle: CustomTextStyles.labelLargeMedium,
         ),

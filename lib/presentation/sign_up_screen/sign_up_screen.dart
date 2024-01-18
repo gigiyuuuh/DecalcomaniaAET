@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 class SignUpScreen extends GetWidget<SignUpController> {
   SignUpScreen({Key? key}) : super(key: key);
 
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -81,19 +81,19 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                           ])),
                                   SizedBox(height: 1.v),
                                   Container(
-                                      height: 78.v,
+                                      height: 45.v,
                                       width: 271.h,
-                                      margin: EdgeInsets.only(left: 3.h),
+                                      margin: EdgeInsets.symmetric(
+                                          horizontal: 5.h, vertical: 10.v),
                                       child: Stack(
                                           alignment: Alignment.topLeft,
                                           children: [
-                                            _buildName(),
                                             Align(
                                                 alignment: Alignment.topLeft,
                                                 child: Padding(
                                                     padding: EdgeInsets.only(
-                                                        right: 14.h,
-                                                        bottom: 17.v),
+                                                      right: 14.h,
+                                                    ),
                                                     child: Row(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
@@ -109,7 +109,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                               children: [
                                                                 SizedBox(
                                                                     height:
-                                                                        40.v,
+                                                                        30.v,
                                                                     width:
                                                                         128.h,
                                                                     child: Stack(
@@ -121,26 +121,12 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                                               alignment: Alignment.topLeft,
                                                                               child: Padding(padding: EdgeInsets.only(left: 1.h), child: Text("lbl_date_of_birth".tr.toUpperCase(), style: theme.textTheme.labelMedium)))
                                                                         ])),
-                                                                SizedBox(
-                                                                    height:
-                                                                        6.v),
-                                                                Padding(
-                                                                    padding: EdgeInsets.only(
-                                                                        left: 3
-                                                                            .h),
-                                                                    child: Text(
-                                                                        "lbl_address"
-                                                                            .tr
-                                                                            .toUpperCase(),
-                                                                        style: theme
-                                                                            .textTheme
-                                                                            .labelMedium))
                                                               ]),
                                                           Padding(
                                                               padding: EdgeInsets
                                                                   .only(
                                                                       bottom:
-                                                                          4.v),
+                                                                          1.v),
                                                               child: Column(
                                                                   crossAxisAlignment:
                                                                       CrossAxisAlignment
@@ -157,6 +143,36 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                                   ]))
                                                         ])))
                                           ])),
+                                  SizedBox(height: 1.v),
+                                  Container(
+                                      width: 50.h,
+                                      margin: EdgeInsets.only(left: 3.h),
+                                      child: Stack(
+                                          alignment: Alignment.bottomLeft,
+                                          children: [
+                                            Align(
+                                                alignment: Alignment.topLeft,
+                                                child: Text(
+                                                    "ADDRESS".tr.toUpperCase(),
+                                                    style: CustomTextStyles
+                                                        .labelMediumInter)),
+                                          ])),
+                                  SizedBox(height: 1.v),
+                                  Container(
+                                      height: 30.v,
+                                      width: 265.h,
+                                      margin: EdgeInsets.only(left: 3.h),
+                                      child: Stack(
+                                          alignment: Alignment.topLeft,
+                                          children: [
+                                            _buildAddress(),
+                                            Align(
+                                                alignment: Alignment.topLeft,
+                                                child: Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left: 4.h, bottom: 3.h),
+                                                ))
+                                          ])),
                                   SizedBox(height: 6.v),
                                   Padding(
                                       padding:
@@ -169,7 +185,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                             Container(
                                               padding: EdgeInsets.symmetric(
                                                   horizontal: 1.h,
-                                                  vertical: 2.v),
+                                                  vertical: 1.v),
                                             ),
                                             _buildCity(),
                                             Container(
@@ -186,9 +202,25 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                   vertical: 2.v),
                                             )
                                           ])),
-                                  SizedBox(height: 11.v),
+                                  SizedBox(height: 7.v),
                                   Container(
-                                      height: 35.v,
+                                      width: 90.h,
+                                      margin: EdgeInsets.only(left: 3.h),
+                                      child: Stack(
+                                          alignment: Alignment.bottomLeft,
+                                          children: [
+                                            Align(
+                                                alignment: Alignment.topLeft,
+                                                child: Text(
+                                                    "PHONE NUMBER"
+                                                        .tr
+                                                        .toUpperCase(),
+                                                    style: CustomTextStyles
+                                                        .labelMediumInter)),
+                                          ])),
+                                  SizedBox(height: 1.v),
+                                  Container(
+                                      height: 30.v,
                                       width: 128.h,
                                       margin: EdgeInsets.only(left: 6.h),
                                       child: Stack(
@@ -198,24 +230,19 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                             Align(
                                                 alignment: Alignment.topLeft,
                                                 child: Padding(
-                                                    padding: EdgeInsets.only(
-                                                        left: 2.h),
-                                                    child: Text(
-                                                        "lbl_phone_number2"
-                                                            .tr
-                                                            .toUpperCase(),
-                                                        style: theme.textTheme
-                                                            .labelMedium)))
+                                                  padding: EdgeInsets.only(
+                                                      left: 5.h),
+                                                ))
                                           ])),
                                   SizedBox(height: 18.v),
                                   Divider(indent: 1.h),
-                                  SizedBox(height: 7.v),
+                                  SizedBox(height: 10.v),
                                   Container(
-                                      height: 46.v,
+                                      height: 55.v,
                                       width: 199.h,
                                       margin: EdgeInsets.only(left: 3.h),
                                       child: Stack(
-                                          alignment: Alignment.bottomLeft,
+                                          alignment: Alignment.topCenter,
                                           children: [
                                             Align(
                                                 alignment: Alignment.topRight,
@@ -228,7 +255,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                             Align(
                                                 alignment: Alignment.bottomLeft,
                                                 child: SizedBox(
-                                                    height: 35.v,
+                                                    height: 45.v,
                                                     width: 128.h,
                                                     child: Stack(
                                                         alignment:
@@ -255,7 +282,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                           ])),
                                   SizedBox(height: 1.v),
                                   Container(
-                                      height: 35.v,
+                                      height: 45.v,
                                       width: 265.h,
                                       margin: EdgeInsets.only(left: 3.h),
                                       child: Stack(
@@ -276,21 +303,21 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                           ])),
                                   Padding(
                                       padding: EdgeInsets.only(
-                                          left: 3.h, right: 14.h),
+                                          left: 1.h, right: 14.h),
                                       child: Row(children: [
                                         SizedBox(
-                                            height: 35.v,
+                                            height: 45.v,
                                             width: 128.h,
                                             child: Stack(
                                                 alignment: Alignment.topLeft,
                                                 children: [
-                                                  Align(
+                                                  const Align(
                                                     alignment:
                                                         Alignment.bottomCenter,
                                                   ),
                                                   Container(
                                                       margin: EdgeInsets.only(
-                                                          left: 9.h),
+                                                          left: 1.h),
                                                       child: Stack(children: [
                                                         _buildPassword(),
                                                         Align(
@@ -299,7 +326,9 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                             child: Padding(
                                                                 padding: EdgeInsets
                                                                     .only(
-                                                                        left: 4
+                                                                        left:
+                                                                            4.h,
+                                                                        bottom: 10
                                                                             .h),
                                                                 child: Text(
                                                                     "password"
@@ -311,7 +340,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                                       ]))
                                                 ])),
                                         Container(
-                                            height: 34.v,
+                                            height: 45.v,
                                             width: 128.h,
                                             margin: EdgeInsets.only(left: 9.h),
                                             child: Stack(
@@ -417,7 +446,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
   }
 
   /// Section Widget
-  Widget _buildName() {
+  Widget _buildAddress() {
     return CustomTextFormField(
         width: 270.h,
         controller: controller.nameController,
@@ -436,7 +465,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
     return CustomTextFormField(
         hintText: "MM/DD/YYYY",
         width: 128.h,
-        contentPadding: EdgeInsets.only(top: 1.v, bottom: 3.v),
+        contentPadding: EdgeInsets.only(top: 3.v, bottom: 3.v),
         alignment: Alignment.topCenter);
   }
 
@@ -455,7 +484,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                         controller.genderValue.value = value;
                       }),
                   Padding(
-                      padding: EdgeInsets.only(left: 17.h),
+                      padding: EdgeInsets.only(left: 20.h),
                       child: CustomRadioButton(
                           text: "lbl_female".tr.toUpperCase(),
                           value: controller
@@ -471,9 +500,9 @@ class SignUpScreen extends GetWidget<SignUpController> {
   Widget _buildPhone() {
     return CustomTextFormField(
         width: 128.h,
-        controller: controller.PhoneController,
+        controller: controller.phoneController,
         hintText: "lbl_ph".tr.toUpperCase(),
-        alignment: Alignment.bottomCenter);
+        alignment: Alignment.centerLeft);
   }
 
   /// Section Widget
@@ -489,7 +518,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
   Widget _buildCity() {
     return CustomTextFormField(
         width: 90.h,
-        controller: controller.CityController,
+        controller: controller.cityController,
         hintText: "CITY".tr.toUpperCase(),
         alignment: Alignment.bottomCenter);
   }
@@ -498,7 +527,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
   Widget _buildProvince() {
     return CustomTextFormField(
         width: 90.h,
-        controller: controller.ProvinceController,
+        controller: controller.provinceController,
         hintText: "PROVINCE".tr.toUpperCase(),
         alignment: Alignment.bottomCenter);
   }
@@ -522,7 +551,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
   Widget _buildPassword() {
     return CustomTextFormField(
         width: 128.h,
-        controller: controller.PasswordController,
+        controller: controller.passwordController,
         textInputAction: TextInputAction.done,
         alignment: Alignment.bottomLeft);
   }

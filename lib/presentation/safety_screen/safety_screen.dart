@@ -15,7 +15,7 @@ class SafetyScreen extends GetWidget<SafetyController> {
           key: key,
         );
 
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {

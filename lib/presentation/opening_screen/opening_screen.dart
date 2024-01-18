@@ -17,21 +17,21 @@ class OpeningScreen extends GetWidget<OpeningController> {
         backgroundColor: appTheme.gray50,
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.symmetric(horizontal: 55.h),
+          padding: EdgeInsets.symmetric(horizontal: 90.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomImageView(
                 imagePath: ImageConstant.imgKhakiBeigeSimple,
-                height: 250.adaptSize,
-                width: 250.adaptSize,
+                height: 300.adaptSize,
+                width: 300.adaptSize,
               ),
               SizedBox(height: 27.v),
               CustomElevatedButton(
                   width: 86.h,
                   text: "lbl_continue".tr.toUpperCase(),
-                  margin: EdgeInsets.only(left: 78.h),
+                  margin: EdgeInsets.only(left: 40.h),
                   onPressed: () {
                     onTapCONTINUE();
                   }),

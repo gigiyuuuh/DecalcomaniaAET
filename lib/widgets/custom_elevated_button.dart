@@ -3,7 +3,7 @@ import 'package:decalcomania_aet/widgets/base_button.dart';
 import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends BaseButton {
-  CustomElevatedButton({
+  const CustomElevatedButton({
     Key? key,
     this.decoration,
     this.leftIcon,
@@ -18,6 +18,7 @@ class CustomElevatedButton extends BaseButton {
     double? width,
     required String text,
   }) : super(
+          key: key,
           text: text,
           onPressed: onPressed,
           buttonStyle: buttonStyle,
@@ -46,8 +47,8 @@ class CustomElevatedButton extends BaseButton {
   }
 
   Widget get buildElevatedButtonWidget => Container(
-        height: this.height ?? 24.v,
-        width: this.width ?? double.maxFinite,
+        height: height ?? 24.v,
+        width: width ?? double.maxFinite,
         margin: margin,
         decoration: decoration,
         child: ElevatedButton(

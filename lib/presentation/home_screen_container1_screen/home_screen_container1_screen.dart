@@ -36,15 +36,15 @@ class HomeScreenContainer1Screen
   ///Handling route based on bottom click actions
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
-      case BottomBarEnum.Homebluegray400:
+      case BottomBarEnum.homeBluegray400:
         return AppRoutes.homeScreenContainerPage;
-      case BottomBarEnum.Rewind:
+      case BottomBarEnum.rewind:
         return AppRoutes.searchScreenPage;
-      case BottomBarEnum.Info:
+      case BottomBarEnum.info:
         return AppRoutes.skinEvaluationAnalysisPage;
-      case BottomBarEnum.Linkedin:
+      case BottomBarEnum.linkedin:
         return AppRoutes.mapScreenPage;
-      case BottomBarEnum.Lock:
+      case BottomBarEnum.lock:
         return AppRoutes.profileScreenPage;
       default:
         return "/";
@@ -63,9 +63,9 @@ class HomeScreenContainer1Screen
       case AppRoutes.mapScreenPage:
         return MapScreenPage();
       case AppRoutes.profileScreenPage:
-        return ProfileScreenPage();
+        return const ProfileScreenPage();
       default:
-        return DefaultWidget();
+        return const DefaultWidget();
     }
   }
 }
