@@ -27,9 +27,9 @@ class UserRightsScreen extends GetWidget<UserRightsController> {
         title: SizedBox(
             height: 51.v,
             width: double.maxFinite,
-            child: Stack(alignment: Alignment.bottomCenter, children: [
+            child: Stack(alignment: Alignment.center, children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x360),
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
               AppbarSubtitle(
                   text: "lbl_back".tr,
                   margin: EdgeInsets.fromLTRB(31.h, 12.v, 287.h, 19.v),

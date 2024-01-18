@@ -1,5 +1,8 @@
+import 'package:decalcomania_aet/presentation/home_screen_container1_screen/home_screen_container1_screen.dart';
+
 import 'controller/settings_controller.dart';
 import 'package:decalcomania_aet/core/app_export.dart';
+// ignore: unused_import
 import 'package:decalcomania_aet/presentation/home_screen_container_page/home_screen_container_page.dart';
 import 'package:decalcomania_aet/presentation/map_screen_page/map_screen_page.dart';
 import 'package:decalcomania_aet/presentation/profile_screen_page/profile_screen_page.dart';
@@ -126,9 +129,9 @@ class SettingsScreen extends GetWidget<SettingsController> {
             width: double.maxFinite,
             child: Stack(alignment: Alignment.center, children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x360),
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x360)
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200)
             ])),
         actions: [
           Container(
@@ -227,7 +230,7 @@ class SettingsScreen extends GetWidget<SettingsController> {
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
       case BottomBarEnum.homeBluegray400:
-        return AppRoutes.homeScreenContainerPage;
+        return AppRoutes.homeScreenContainer1Screen;
       case BottomBarEnum.rewind:
         return AppRoutes.searchScreenPage;
       case BottomBarEnum.info:
@@ -244,8 +247,8 @@ class SettingsScreen extends GetWidget<SettingsController> {
   ///Handling page based on route
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
-      case AppRoutes.homeScreenContainerPage:
-        return HomeScreenContainerPage();
+      case AppRoutes.homeScreenContainer1Screen:
+        return const HomeScreenContainer1Screen();
       case AppRoutes.searchScreenPage:
         return SearchScreenPage();
       case AppRoutes.skinEvaluationAnalysisPage:

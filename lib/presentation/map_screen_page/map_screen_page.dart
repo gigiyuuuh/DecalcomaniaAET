@@ -120,13 +120,13 @@ class MapScreenPage extends StatelessWidget {
             width: double.maxFinite,
             child: Stack(children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x360),
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
               SizedBox(
                   height: 51.v,
                   width: double.maxFinite,
                   child: Stack(children: [
                     AppbarTitleImage(
-                        imagePath: ImageConstant.imgKhakiBeigeSimple51x360),
+                        imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
                     SizedBox(
                         height: 51.v,
                         width: double.maxFinite,
@@ -187,11 +187,11 @@ class MapScreenPage extends StatelessWidget {
                                     ])),
                                 AppbarTitleImage(
                                     imagePath:
-                                        ImageConstant.imgKhakiBeigeSimple51x360)
+                                        ImageConstant.imgKhakiBeigeSimple51x200)
                               ])),
                           AppbarTitleImage(
                               imagePath:
-                                  ImageConstant.imgKhakiBeigeSimple51x360)
+                                  ImageConstant.imgKhakiBeigeSimple51x200)
                         ]))
                   ]))
             ])),

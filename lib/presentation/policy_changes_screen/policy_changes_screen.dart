@@ -29,7 +29,7 @@ class PolicyChangesScreen extends GetWidget<PolicyChangesController> {
             width: double.maxFinite,
             child: Stack(alignment: Alignment.bottomCenter, children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x360),
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
               AppbarSubtitle(
                   text: "lbl_back".tr,
                   margin: EdgeInsets.fromLTRB(31.h, 12.v, 287.h, 19.v),

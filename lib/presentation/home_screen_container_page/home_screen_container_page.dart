@@ -54,35 +54,22 @@ class HomeScreenContainerPage extends StatelessWidget {
         centerTitle: true,
         title: SizedBox(
             height: 51.v,
-            width: double.maxFinite,
             child: Stack(children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x360),
-              SizedBox(
-                  height: 51.v,
-                  width: double.maxFinite,
-                  child: Stack(children: [
-                    AppbarTitleImage(
-                        imagePath: ImageConstant.imgKhakiBeigeSimple51x360),
-                    Container(
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
+              Container(
+                  height: 24.adaptSize,
+                  width: 24.adaptSize,
+                  margin: EdgeInsets.fromLTRB(20.h, 8.v, 316.h, 19.v),
+                  child: Stack(alignment: Alignment.center, children: [
+                    CustomImageView(
+                        imagePath: ImageConstant.imgGrid,
                         height: 24.adaptSize,
                         width: 24.adaptSize,
-                        margin: EdgeInsets.fromLTRB(20.h, 8.v, 316.h, 19.v),
-                        child: Stack(alignment: Alignment.center, children: [
-                          CustomImageView(
-                              imagePath: ImageConstant.imgGrid,
-                              height: 24.adaptSize,
-                              width: 24.adaptSize,
-                              alignment: Alignment.center,
-                              onTap: () {
-                                onTapImgGrid();
-                              }),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgGrid,
-                              height: 24.adaptSize,
-                              width: 24.adaptSize,
-                              alignment: Alignment.center)
-                        ]))
+                        alignment: Alignment.center,
+                        onTap: () {
+                          onTapImgGrid();
+                        }),
                   ]))
             ])),
         actions: [

@@ -29,12 +29,6 @@ class TextItemWidget extends StatelessWidget {
               width: 90.h,
             ),
           ),
-          Obx(
-            () => Text(
-              textItemModelObj.text!.value,
-              style: CustomTextStyles.labelLargeMedium,
-            ),
-          ),
         ],
       ),
     );

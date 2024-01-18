@@ -45,7 +45,7 @@ class OpeningScreen extends GetWidget<OpeningController> {
 
   onTapCONTINUE() {
     Get.toNamed(
-      AppRoutes.signUpScreen,
+      AppRoutes.logInPageScreen,
     );
   }
 }

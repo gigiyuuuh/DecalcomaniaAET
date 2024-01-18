@@ -110,13 +110,13 @@ class FoundationSectionRecommendationsScreen
             width: double.maxFinite,
             child: Stack(children: [
               AppbarTitleImage(
-                  imagePath: ImageConstant.imgKhakiBeigeSimple51x360),
+                  imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
               SizedBox(
                   height: 51.v,
                   width: double.maxFinite,
                   child: Stack(children: [
                     AppbarTitleImage(
-                        imagePath: ImageConstant.imgKhakiBeigeSimple51x360),
+                        imagePath: ImageConstant.imgKhakiBeigeSimple51x200),
                     Container(
                         height: 24.adaptSize,
                         width: 24.adaptSize,
