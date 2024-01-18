@@ -46,7 +46,8 @@ class ImageConstant {
   static String imgRewindGray600 = '$imagePath/img_rewind_gray_600.svg';
 
   // Common images
-  static String imgKhakiBeigeSimple51x200 = '$imagePath/LOGO_Decal.png';
+  static String imgKhakiBeigeSimple51x200 =
+      '$imagePath/img_khaki_beige_simple_51x360.png';
 
   static String imgClose = '$imagePath/img_close.svg';
 
