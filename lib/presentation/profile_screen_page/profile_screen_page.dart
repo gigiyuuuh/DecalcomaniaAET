@@ -283,7 +283,7 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
       case AppRoutes.homeScreenContainer1Screen:
-        return HomeScreenContainer1Screen();
+        return const HomeScreenContainer1Screen();
       case AppRoutes.searchScreenPage:
         return SearchScreenPage();
       case AppRoutes.skinEvaluationAnalysisPage:

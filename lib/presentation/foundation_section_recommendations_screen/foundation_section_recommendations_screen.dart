@@ -1,9 +1,10 @@
+// ignore: unused_import
 import 'package:decalcomania_aet/presentation/home_screen_container1_screen/home_screen_container1_screen.dart';
-
 import '../foundation_section_recommendations_screen/widgets/foundationsectionrecommendationgrid_item_widget.dart';
 import 'controller/foundation_section_recommendations_controller.dart';
 import 'models/foundationsectionrecommendationgrid_item_model.dart';
 import 'package:decalcomania_aet/core/app_export.dart';
+// ignore: unused_import
 import 'package:decalcomania_aet/presentation/home_screen_container_page/home_screen_container_page.dart';
 import 'package:decalcomania_aet/presentation/map_screen_page/map_screen_page.dart';
 import 'package:decalcomania_aet/presentation/profile_screen_page/profile_screen_page.dart';
@@ -227,7 +228,7 @@ class FoundationSectionRecommendationsScreen
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
       case BottomBarEnum.homeBluegray400:
-        return AppRoutes.homeScreenContainer1Screen;
+        return AppRoutes.homeScreenContainerPage;
       case BottomBarEnum.rewind:
         return AppRoutes.searchScreenPage;
       case BottomBarEnum.info:
@@ -244,8 +245,8 @@ class FoundationSectionRecommendationsScreen
   ///Handling page based on route
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
-      case AppRoutes.homeScreenContainer1Screen:
-        return HomeScreenContainer1Screen();
+      case AppRoutes.homeScreenContainerPage:
+        return HomeScreenContainerPage();
       case AppRoutes.searchScreenPage:
         return SearchScreenPage();
       case AppRoutes.skinEvaluationAnalysisPage:
