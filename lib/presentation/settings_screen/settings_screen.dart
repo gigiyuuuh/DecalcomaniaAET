@@ -304,7 +304,7 @@ class SettingsScreen extends GetWidget<SettingsController> {
   /// Navigates to the logInPageScreen when the action is triggered.
   onTapTxtLogOut() {
     Get.toNamed(
-      AppRoutes.logInPageScreen,
+      AppRoutes.openingScreen,
     );
   }
 }
